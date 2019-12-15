@@ -13,13 +13,13 @@ xmlns:context="http://www.springframework.org/schema/context"
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- root-context는 스프링이 로드되면서 읽어 들이는 문서
 	이미 만들어진 클래스들을 이용해서 스프링의 빈(Bean)으로 등록할 때 사용
-	외부 jar 파일등으로 사용하는 클래스들은 <bean> 태그를 이용해서 작성  &는 &amp;로 바꿔야 한다.-->
-	
+	외부 jar 파일등으로 사용하는 클래스들은 <bean> 태그를 이용해서 작성  &는 &amp;로 바꿔야 한다.
+	 -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName"
 		value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy">
 		</property>
-		<property name="jdbcUrl" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/blogrom?serverTimezone=UTC&amp;useSSL=false">
+		<property name="jdbcUrl" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/board32?serverTimezone=UTC&amp;useSSL=false">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="111111"></property>
@@ -40,6 +40,8 @@ xmlns:context="http://www.springframework.org/schema/context"
 	<mybatis-spring:scan base-package="org.zerock.mapper"/>
 	
 	<context:component-scan base-package="org.zerock.sample">
+	</context:component-scan>
+	<context:component-scan base-package="org.zerock.service">
 	</context:component-scan>
 	
 </beans>
