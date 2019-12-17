@@ -34,6 +34,11 @@ public class BoardController {
 		System.out.println("list실행");
 		model.addAttribute("list", service.getList());
 	}
+	/**입력 페이지 이동*/
+	@GetMapping("/register")
+	public void register() {
+	//주소가 동일해도 방식이 달라서 이름이 같아도 정상 작동한다.
+	}
 	/**입력*/
 	@PostMapping("/register")
 	public String register(BoardVO board, RedirectAttributes rttr) {
