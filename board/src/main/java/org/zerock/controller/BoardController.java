@@ -50,8 +50,8 @@ public class BoardController {
 		//redirect = response.sendRedirect()
 		return "redirect:/board/list";
 	}
-	/**조회*/
-	@GetMapping("/get")
+	/**조회, 수정 이동*/
+	@GetMapping({"/get", "/modify"})//get, post는 배열로 경로 처리 가능
 	public void get(@RequestParam("bno") long bno, Model model ) {
 	//@RequestParam 파라미터 이름과 변수 이름을 기준으로 동작하기 때문에 ("bno")생략 가능
 		log.info("/get");
