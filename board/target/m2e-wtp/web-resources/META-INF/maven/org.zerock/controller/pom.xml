@@ -11,10 +11,21 @@
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.8</java-version>
-		<org.springframework-version>5.0.16.RELEASE</org.springframework-version>
+		<org.springframework-version>5.2.6.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
+<!--스프링 설정-->
+<!--Discord API start-->
+<repositories>
+	<repository>
+	    <id>jcenter</id>
+	    <name>jcenter-bintray</name>
+	    <url>https://jcenter.bintray.com</url>
+	</repository>
+</repositories>
+<!--Discord API end-->
+<!--스프링 설정-->
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -63,7 +74,7 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.15</version>
+			<version>1.2.17</version>
 			<exclusions>
 				<exclusion>
 					<groupId>javax.mail</groupId>
@@ -118,7 +129,7 @@
 			<version>4.12</version><!-- 기존4.7 -->
 			<scope>test</scope>
 		</dependency>
-		
+
 <!-- 스프링 설정 추가 -->
 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
@@ -179,6 +190,20 @@
     <version>1.18.0</version>
     <scope>provided</scope>
 </dependency>
+<!--Discord API without Audio start-->
+<dependency>
+    <groupId>net.dv8tion</groupId>
+    <artifactId>JDA</artifactId>
+    <version>4.1.1_150</version>
+    <exclusions>
+        <exclusion>
+            <groupId>club.minnced</groupId>
+            <artifactId>opus-java</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<!--Discord API end-->
+
 <!-- 스프링 설정 추가 -->
 	</dependencies>
     <build>
