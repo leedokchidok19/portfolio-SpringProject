@@ -13,14 +13,13 @@ public class DiscordBot implements EventListener{
 	public static void main(String[] args)
 			throws LoginException, InterruptedException
 	{
-		String bot_token = null;
-		// Note: It is important to register your ReadyListener before building
-		JDA jda = new JDABuilder(bot_token)
-					.addEventListeners(new DiscordBot())
-					.build();
-
-		// optionally block until JDA is ready
-		jda.awaitReady();
+		/*
+		 * String bot_token = null; // Note: It is important to register your
+		 * ReadyListener before building JDA jda = new JDABuilder(bot_token)
+		 * .addEventListeners(new DiscordBot()) .build();
+		 * 
+		 * // optionally block until JDA is ready jda.awaitReady();
+		 */
 	}
 
 	@Override
